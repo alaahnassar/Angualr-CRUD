@@ -1,0 +1,57 @@
+<form class="w-50 mx-auto" [formGroup]="product" (ngSubmit)="add($event)">
+  <!-- <div class="mb-3">
+    <label for="id" class="form-label">id</label>
+    <input formControlName="id" type="text" class="form-control" id="id" name="id">
+  </div> -->
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="name" name="name">
+    <ng-container *ngIf="ProductName.touched" >
+
+      <div *ngIf="ProductName.hasError('required')" class="form-text text-danger">
+          Product Name is required!
+      </div>
+      <div *ngIf="ProductName.errors?.['minlength']" class="form-text text-danger">
+          Product Name length should be more than 3 chars!!
+      </div>
+    </ng-container>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">description</label>
+    <input formControlName="description" type="text" class="form-control" id="description" name="description">
+    <ng-container *ngIf="Productdes.touched" >
+
+      <div *ngIf="Productdes.hasError('required')" class="form-text text-danger">
+          Product description is required!
+      </div>
+      <div *ngIf="Productdes.errors?.['minlength']" class="form-text text-danger">
+          Product description length should be more than 10 chars!
+      </div>
+    </ng-container>
+  </div>
+  <div class="mb-3">
+    <label for="price" class="form-label">price</label>
+    <input formControlName="price" type="number" class="form-control" id="price" name="price">
+    <ng-container *ngIf="ProductPrice.touched" >
+
+      <div *ngIf="ProductPrice.hasError('required')" class="form-text text-danger">
+          Product price is required!
+      </div>
+    </ng-container>
+  </div>
+  <div class="mb-3">
+    <label for="quntity" class="form-label">quntity</label>
+    <input formControlName="quntity" type="number" class="form-control" id="quntity" name="quntity">
+    <ng-container *ngIf="ProductQuantity.touched" >
+
+      <div *ngIf="ProductQuantity.hasError('required')" class="form-text text-danger">
+          Product Quantity is required!
+      </div>
+    </ng-container>
+  </div>
+  <div class="mb-3">
+    <label for="img" class="form-label">image</label>
+    <input formControlName="img" type="text" class="form-control" id="img" name="img">
+  </div>
+  <button type="submit" class="btn btn-primary"  >{{productId?"Edit":"Add"}}</button>
+</form>

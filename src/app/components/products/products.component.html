@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="d-flex justify-content-center flex-wrap col-12 py-5">
+   <div *ngFor="let product of products"  class="col-3 p-2">
+    <div class="card" >
+      <div style="height: 300px;">
+        <img src="../../../assets/imgs/{{product?.img}}" class="card-img-top object-fit-cover h-100" alt="error on loading">
+      </div>
+
+      <div class="card-body">
+        <h5 class="card-title">{{product.name}}</h5>
+        <p class="card-text">price:{{product.price |currency }}</p>
+        <a [routerLink]='["/products"]' (click)="removeProductById(product.id)" class="btn btn-danger px-3 float-end"><i class="fa-solid fa-trash-can"></i></a>
+        <a [routerLink]='["/products",product.id]' class="btn btn-success text-white mx-2 float-end"><i class="fa-regular fa-eye-slash"></i></a>
+        <a routerLink="/products/{{product.id}}/edit" class="btn btn-warning text-white float-end"><i class="fa-regular fa-pen-to-square"></i></a>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>

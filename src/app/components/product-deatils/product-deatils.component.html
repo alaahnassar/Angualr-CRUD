@@ -1,0 +1,20 @@
+<div class="container py-5">
+  <div class="card mb-3 w-75 mx-auto ">
+    <div class="row"  >
+      <div class="col-md-4" style="height: 300px;">
+        <img src="../../../assets/imgs/{{product?.img}}" class="rounded-start object-fit-cover h-100 w-100"  alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h3 class="card-title fw-semibold">{{product?.name}}</h3>
+          <p class="card-text fs-5">{{product?.description}}</p>
+          <p class="card-text">price:<strong>{{product?.price |currency :'EGY'}}</strong></p>
+          <p class="card-text">quntity:<strong>{{product?.quntity}}</strong></p>
+          <button class="btn text-capitalize" [ngClass]="{'btn-danger':product?.quntity==0,'btn-primary':product?.quntity!=0}">
+            {{(product?.quntity ===0 ?"solid out":"add") }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
