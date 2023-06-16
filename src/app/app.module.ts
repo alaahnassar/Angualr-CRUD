@@ -11,7 +11,8 @@ import { LoginComponent } from './components/login/login.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ProductDeatilsComponent } from './components/product-deatils/product-deatils.component';
 import { ProductsComponent } from './components/products/products.component';
-import{HttpClientModule}from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -23,16 +24,16 @@ import{HttpClientModule}from '@angular/common/http';
     ProductDeatilsComponent,
     ErrorComponent,
     AddProductComponent,
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatPaginatorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
